@@ -1,56 +1,53 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 26
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 25
-        versionCode 3
-        versionName "1.1.1"
-        multiDexEnabled true
+        targetSdkVersion 26
+        versionCode 5
+        versionName "1.1.2"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    /*lintOptions{
-        abortOnError false
-    }*/
+
 }
 
 ext{
     //google
-    gspVersion = '11.0.4'
+    gspVersion = '11.6.0'
 
-    //retrofit
-    retrofitVersion = '2.3.0'
-    gsonVersion = '2.8.1'
+    //Gson
+    gsonVersion = '2.8.2'
 
     //facebook
-    facebookVersion = '4.23.0'
+    facebookVersion = '4.26.1'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
     //OkHttp
-    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
     //Logging
     compile 'com.jakewharton.timber:timber:4.5.1'
     //GSON
     compile "com.google.code.gson:gson:$gsonVersion"
     //RxAndroid
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.1.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.6'
     //Admob|ADX|DFP
     compile "com.google.android.gms:play-services-ads:$gspVersion"
-    compile 'com.google.ads.mediation:facebook:4.26.0.0'
-    compile 'com.google.ads.mediation:mopub:4.17.0.0'
+    compile 'com.google.ads.mediation:facebook:4.26.1.0'
+    compile 'com.google.ads.mediation:mopub:4.18.0.0'
     //Facebook audience
     compile "com.facebook.android:audience-network-sdk:$facebookVersion"
     //MoPub
@@ -61,8 +58,7 @@ dependencies {
         transitive = true
     }
     //Flurry
-    compile 'com.flurry.android:analytics:7.0.0@aar'
-    compile 'com.flurry.android:ads:7.0.0@aar'
+    compile 'com.flurry.android:analytics:7.0.1@aar'
+    compile 'com.flurry.android:ads:7.0.1@aar'
+    compile files('libs/appbid-sdk.jar')
 }
-
-
