@@ -9,7 +9,7 @@ If you haven't already, [sign up](http://appbid.com/) for an account to start mo
 ## Download and integrate SDK
 Download the SDK from our repository
 ```
-git clone https://github.com/Mobbo-com/Appbid-SDK---Unity
+git clone https://github.com/App-Bid/Appbid-lite
 ```
 
 Add AppBid library to your project(File->New->Import module):
